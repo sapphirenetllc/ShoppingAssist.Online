@@ -1,4 +1,4 @@
-# ShoppingAssist (shoppingassist.online)
+﻿# ShoppingAssist (shoppingassist.online)
 
 Clean rebuild, rebranded from `vrogo.online` to **ShoppingAssist** (`https://shoppingassist.online/`).
 
@@ -50,7 +50,7 @@ Brand agnostic by design: no marketplace or retailer is named anywhere in the co
 
 ## Config points
 
-- Phone number: `+1(888) 882-5124` / `tel:+18888825124` (search and replace to change)
+- Phone number: `(888) 882-5124` / `tel:+18888825124` (search and replace to change)
 - Coverage cards: `#coverage` in `index.html` (4 cards: Marketplaces, Independent stores, Grocery and essentials, Subscriptions and digital)
 - Brand colors: `:root` vars `--or`, `--or-d`, `--ink`, etc. in `assets/css/style.css` (lines 2 to 18)
 - Fonts: Inter via Google Fonts plus Font Awesome 6.5.2 via CDN (see `<head>` in `index.html`)

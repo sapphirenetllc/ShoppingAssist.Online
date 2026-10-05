@@ -1,4 +1,4 @@
-// Mobile nav toggle
+﻿// Mobile nav toggle
 document.getElementById('hbgBtn')?.addEventListener('click', () => {
   document.getElementById('mobNav')?.classList.toggle('open');
 });
@@ -31,7 +31,7 @@ document.querySelectorAll('.fq').forEach((btn) => {
 // Dynamic year
 document.getElementById('year') && (document.getElementById('year').textContent = String(new Date().getFullYear()));
 
-/* ── FREE TOOLS (100% client-side, no APIs, no cost) ── */
+/* â”€â”€ FREE TOOLS (100% client-side, no APIs, no cost) â”€â”€ */
 (function () {
   'use strict';
 
@@ -128,7 +128,7 @@ document.getElementById('year') && (document.getElementById('year').textContent 
       '<div class="carrier"><i class="fa-solid fa-money-bill-transfer"></i> ' + m.label + '</div>' +
       'Refund issued <strong>' + fmt(base) + '</strong> should arrive between <strong>' + fmt(from) + '</strong> and <strong>' + fmt(to) + '</strong> (business days).' +
       (late
-        ? '<div class="muted" style="color:#FFB066;">That window has passed. Call <a href="tel:+18888825124" style="color:var(--accent);">+1(888) 882-5124</a> and we will help escalate it.</div>'
+        ? '<div class="muted" style="color:#FFB066;">That window has passed. Call <a href="tel:+18888825124" style="color:var(--accent);">(888) 882-5124</a> and we will help escalate it.</div>'
         : '<div class="muted">Still inside the window? Give it until ' + fmt(to) + ', then call us if nothing lands.</div>');
   }
   if (refundBtn) { refundBtn.addEventListener('click', runRefund); }
@@ -194,7 +194,7 @@ document.getElementById('year') && (document.getElementById('year').textContent 
   }
 })();
 
-/* ── SMOOTHNESS: header state, scrollspy, scroll reveals ── */
+/* â”€â”€ SMOOTHNESS: header state, scrollspy, scroll reveals â”€â”€ */
 (function () {
   'use strict';
 
