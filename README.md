@@ -12,19 +12,18 @@ Clean rebuild, rebranded from `vrogo.online` to **ShoppingAssist** (`https://sho
 
 ```text
 index.html              # homepage: announcement, nav, hero plus call card, stats, issues, coverage, free tools, how-it-works, trust, CTA, FAQ, footer, mobile sticky bar
-tracking/               # Package Tracker page (targets parcel tracking keywords)
 refund-calculator/      # Refund Calculator page (targets refund timing keywords)
 claim-letter/           # Claim Letter Builder page (targets dispute letter keywords)
 privacy/                # Privacy Policy (independent-status disclosure, browser-only tools, no data sale)
 terms/                  # Terms of Use (independent-status disclosure, guidance limits, liability)
 cookies/                # Cookie Settings (no first-party tracking cookies, CDN disclosure)
 refund-policy/          # Refund Policy (free tools, no surprise charges, store timelines)
-sitemap.xml + robots.txt # crawl plumbing for all eight pages
+sitemap.xml + robots.txt # crawl plumbing for all seven pages
 assets/
   css/
     style.css           # all custom styles (variables, layout, legal pages, responsive breakpoints)
   js/
-    main.js             # mobile nav toggle, FAQ accordion, dynamic year, free tools (tracker, refund calc, claim builder)
+    main.js             # mobile nav toggle, FAQ accordion, dynamic year, free tools (refund calc, claim builder)
   images/
     logo.svg            # brand mark: midnight badge, gradient insignia, sky wheels, orange keyline (nav, footer, favicon)
 ```

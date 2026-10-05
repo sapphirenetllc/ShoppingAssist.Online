@@ -1,4 +1,4 @@
-﻿// Mobile nav toggle
+// Mobile nav toggle
 document.getElementById('hbgBtn')?.addEventListener('click', () => {
   document.getElementById('mobNav')?.classList.toggle('open');
 });
@@ -31,68 +31,11 @@ document.querySelectorAll('.fq').forEach((btn) => {
 // Dynamic year
 document.getElementById('year') && (document.getElementById('year').textContent = String(new Date().getFullYear()));
 
-/* â”€â”€ FREE TOOLS (100% client-side, no APIs, no cost) â”€â”€ */
+/* ── FREE TOOLS (100% client-side, no APIs, no cost) ── */
 (function () {
   'use strict';
 
-  // --- 1. Package tracker: detect carrier by pattern, deep-link official tracking ---
-  var CARRIERS = [
-    { name: 'UPS', icon: 'fa-truck-fast', test: function (n) { return /^1Z[0-9A-Z]{16}$/.test(n); },
-      url: function (n) { return 'https://www.ups.com/track?tracknum=' + n; } },
-    { name: 'Amazon Logistics', icon: 'fa-box', test: function (n) { return /^TBA\d{12}$/.test(n); },
-      url: function () { return 'https://www.amazon.com/gp/your-account/order-details'; },
-      note: 'Amazon does not offer public tracking links. This opens your Amazon orders page instead.' },
-    { name: 'USPS', icon: 'fa-envelopes-bulk', test: function (n) {
-        return /^(94|93|92|95|94)\d{20}$/.test(n) || /^\d{20,22}$/.test(n) || /^[A-Z]{2}\d{9}[A-Z]{2}$/.test(n); },
-      url: function (n) { return 'https://tools.usps.com/go/TrackConfirmAction?tLabels=' + n; } },
-    { name: 'FedEx', icon: 'fa-plane', test: function (n) { return /^(\d{12}|\d{15}|\d{20})$/.test(n); },
-      url: function (n) { return 'https://www.fedex.com/fedextrack/?trknbr=' + n; } },
-    { name: 'DHL Express', icon: 'fa-plane-departure', test: function (n) { return /^\d{10,11}$/.test(n); },
-      url: function (n) { return 'https://www.dhl.com/us-en/home/tracking/tracking-express.html?submit=1&tracking-id=' + n; } },
-    { name: 'OnTrac / LaserShip', icon: 'fa-truck', test: function (n) { return /^(1LS\d+|[CD]\d{14})$/i.test(n); },
-      url: function (n) { return 'https://www.ontrac.com/tracking/?trackingNumber=' + n; } }
-  ];
-  function universalTrack(n) { return 'https://parcelsapp.com/en/tracking/' + n; }
-
-  var trackInput = document.getElementById('trackInput');
-  var trackBtn = document.getElementById('trackBtn');
-  var trackResult = document.getElementById('trackResult');
-
-  function runTrack() {
-    var raw = (trackInput.value || '').toUpperCase().replace(/[\s-]/g, '');
-    if (!raw) {
-      trackResult.hidden = false;
-      trackResult.innerHTML = 'Enter a tracking number first. It is on your shipping confirmation email or receipt.';
-      return;
-    }
-    var found = null;
-    for (var i = 0; i < CARRIERS.length; i++) {
-      try { if (CARRIERS[i].test(raw)) { found = CARRIERS[i]; break; } } catch (e) { /* next */ }
-    }
-    var html;
-    if (found) {
-      html = '<div class="carrier"><i class="fa-solid ' + found.icon + '"></i> Likely carrier: ' + found.name + '</div>';
-      html += '<div class="track-links"><a class="btn-or" style="padding:11px 24px;font-size:14px;" target="_blank" rel="noopener" href="' +
-        found.url(raw) + '"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open ' + found.name + ' Tracking</a></div>';
-      if (found.note) { html += '<div class="muted">' + found.note + '</div>'; }
-      html += '<div class="muted">No match on their page? Try the universal tracker: ' +
-        '<a target="_blank" rel="noopener" style="color:var(--accent);" href="' + universalTrack(raw) + '">parcelsapp.com</a></div>';
-    } else {
-      html = '<div class="carrier"><i class="fa-solid fa-circle-question"></i> Carrier not recognized</div>';
-      html += 'That format did not match UPS, USPS, FedEx, DHL, Amazon, or OnTrac. Try a universal tracker instead:';
-      html += '<div class="track-links"><a class="btn-or" style="padding:11px 24px;font-size:14px;" target="_blank" rel="noopener" href="' +
-        universalTrack(raw) + '"><i class="fa-solid fa-arrow-up-right-from-square"></i> Track on ParcelsApp</a>' +
-        '<a class="btn-bdr" style="padding:11px 24px;font-size:14px;" target="_blank" rel="noopener" href="https://t.17track.net#nums=' + raw + '">17track</a></div>';
-    }
-    trackResult.hidden = false;
-    trackResult.innerHTML = html;
-  }
-  if (trackBtn) {
-    trackBtn.addEventListener('click', runTrack);
-    trackInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); runTrack(); } });
-  }
-
-  // --- 2. Refund date calculator (business days) ---
+  // --- 1. Refund date calculator (business days) ---
   var METHODS = {
     card: { label: 'Credit or debit card', min: 5, max: 10 },
     bank: { label: 'Bank transfer (ACH)', min: 3, max: 5 },
@@ -133,7 +76,7 @@ document.getElementById('year') && (document.getElementById('year').textContent 
   }
   if (refundBtn) { refundBtn.addEventListener('click', runRefund); }
 
-  // --- 3. Claim message builder ---
+  // --- 2. Claim message builder ---
   var CLAIM_OPENERS = {
     missing: 'My order shows as delivered, but I never received it.',
     late: 'My order is late and tracking has not moved for several days.',
@@ -194,7 +137,7 @@ document.getElementById('year') && (document.getElementById('year').textContent 
   }
 })();
 
-/* â”€â”€ SMOOTHNESS: header state, scrollspy, scroll reveals â”€â”€ */
+/* ── SMOOTHNESS: header state, scrollspy, scroll reveals ── */
 (function () {
   'use strict';
 
