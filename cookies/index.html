@@ -30,6 +30,16 @@
     {"@type":"ListItem","position":2,"name":"Cookie Settings","item":"https://shoppingassist.online/cookies/"}
   ]}
   </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16799190588"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16799190588');
+  </script>
 </head>
 <body>
 
@@ -93,18 +103,20 @@
         </div>
 
         <h2 id="ours">1. Cookies we set: none for tracking</h2>
-        <p>ShoppingAssist does <strong>not</strong> use first-party tracking, advertising, or analytics cookies. Our free tools keep what you type only in your browser's short-term page memory, which disappears when you close or refresh the page. We do not store your tracking numbers, refund dates, or claim drafts on our servers.</p>
+        <p>ShoppingAssist does <strong>not</strong> use first-party tracking, advertising, or analytics cookies of its own. Our free tools keep what you type only in your browser's short-term page memory, which disappears when you close or refresh the page. We do not store your tracking numbers, refund dates, or claim drafts on our servers.</p>
+        <p>We do run <strong>Google Ads measurement (Google tag AW-16799190588)</strong> on every page to count phone-call conversions from ads. Google may set or read its own cookies (for example on googletagmanager.com / googleadservices.com) to attribute a call click to an ad. See section 2.</p>
 
-        <h2 id="third">2. Third-party content</h2>
-        <p>To keep the site fast and readable we load two widely used libraries:</p>
+        <h2 id="third">2. Third-party content and measurement</h2>
+        <p>To keep the site fast and readable we load widely used third-party files, and to measure ad performance we run Google Ads:</p>
         <ul>
           <li><strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com) for the Inter typeface;</li>
-          <li><strong>Font Awesome</strong> via cdnjs (cdnjs.cloudflare.com) for icons.</li>
+          <li><strong>Font Awesome</strong> via cdnjs (cdnjs.cloudflare.com) for icons;</li>
+          <li><strong>Google Ads tag</strong> (www.googletagmanager.com, ID AW-16799190588) on every page for basic visit measurement, plus a <strong>Contact conversion</strong> (AW-16799190588/1bXfCJjJ9I0dELycvco-) that fires only when you tap a call link. No Purchase conversion fires automatically; it only fires if a real purchase event calls <code>reportPurchaseConversion()</code>.</li>
         </ul>
-        <p>Those providers may receive standard request data (such as your IP address and browser type) under their own privacy policies when your browser fetches the files. They do not receive anything you type into our tools. We place no social-media pixels and no ad tags on this site.</p>
+        <p>Those providers may receive standard request data (such as your IP address and browser type) under their own privacy policies when your browser fetches the files. They do not receive anything you type into our tools. We place no social-media pixels on this site.</p>
 
         <h2 id="manage">3. How to manage cookies</h2>
-        <p>Because we set no optional cookies, there is nothing to opt out of here. To control cookies generally:</p>
+        <p>Because we set no optional first-party cookies, there is nothing to opt out of here for our own storage. For Google Ads measurement:</p>
         <ul>
           <li>use your browser's <strong>Settings &gt; Privacy</strong> to block third-party cookies or clear site data;</li>
           <li>use private / incognito mode if you want zero local history;</li>
@@ -162,6 +174,6 @@
     </a>
   </div>
 
-  <script src="../assets/js/main.js?v=9"></script>
+  <script src="../assets/js/main.js?v=10"></script>
 </body>
 </html>

@@ -1,3 +1,32 @@
+/* ── GOOGLE ADS CONVERSIONS (AW-16799190588) ── */
+// Contact: AW-16799190588/1bXfCJjJ9I0dELycvco- (fires on call-link clicks, not on pageview)
+// Purchase: AW-16799190588/gPTnCL2G94wdELycvco- (call reportPurchaseConversion(id) only on a real purchase/thank-you)
+function reportContactConversion() {
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', { 'send_to': 'AW-16799190588/1bXfCJjJ9I0dELycvco-' });
+    }
+  } catch (e) { /* noop */ }
+}
+function reportPurchaseConversion(transactionId) {
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-16799190588/gPTnCL2G94wdELycvco-',
+        'transaction_id': String(transactionId || '')
+      });
+    }
+  } catch (e) { /* noop */ }
+}
+window.reportContactConversion = reportContactConversion;
+window.reportPurchaseConversion = reportPurchaseConversion;
+
+// Delegated so dynamically injected tel: links (e.g. refund-calculator result) also count.
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+  if (a) { reportContactConversion(); }
+});
+
 // Mobile nav toggle
 document.getElementById('hbgBtn')?.addEventListener('click', () => {
   document.getElementById('mobNav')?.classList.toggle('open');
